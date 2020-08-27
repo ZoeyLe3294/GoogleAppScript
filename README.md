@@ -1,4 +1,4 @@
-## GoogleScript
+# GoogleScript
 
 ## 1. Filtering
 - Summary:
