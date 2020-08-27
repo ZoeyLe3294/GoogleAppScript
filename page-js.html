@@ -1,0 +1,29 @@
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+      })
+
+      document.getElementById("password").addEventListener("input",getAuthen);
+
+        function getAuthen(){
+          var userInfo = {};
+          userInfo.username = document.getElementById("username").value;
+          userInfo.password = document.getElementById("password").value;
+          google.script.run.withSuccessHandler(update).Security(userInfo);
+        }
+        
+        function update(res){
+          document.getElementById("test").value = res[0]
+          M.updateTextFields();
+          if(res[0]==true){
+          document.getElementById("btn").href+=("?v="+res[1]);
+          }
+        }
+          
+        
+         
+
+
+
+    </script>
